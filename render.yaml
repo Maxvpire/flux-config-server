@@ -9,4 +9,4 @@ services:
       - key: SPRING_PROFILES_ACTIVE
         value: native
       - key: SERVER_PORT
-        value: 8888
+        value: 8080
