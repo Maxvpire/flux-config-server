@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: native
+  security:
+    user:
+      name: ${CONFIG_USER}
+      password: ${CONFIG_PASSWORD}
+  application:
+    name: FluxConfigService
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configurations

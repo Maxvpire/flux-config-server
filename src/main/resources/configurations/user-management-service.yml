@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: ${USER_PGHOST}
+    username: ${USER_PGUSER}
+    password: ${USER_PGPASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-description: init
+    baseline-version: 0
+    url: ${USER_PGHOST}
+    user: ${USER_PGUSER}
+    password: ${USER_PGPASSWORD}
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+server:
+  port: ${PORT:8081}
