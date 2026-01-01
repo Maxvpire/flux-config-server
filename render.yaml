@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: spring-config-server
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: native
+      - key: SERVER_PORT
+        value: 8888
