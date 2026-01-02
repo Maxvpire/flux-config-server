@@ -12,7 +12,7 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
-# Copy jar from build stage
+# Copy jar from build stage - ONLY THIS COPY IS NEEDED
 COPY --from=build /app/target/*.jar app.jar
 
 # Render uses PORT env variable

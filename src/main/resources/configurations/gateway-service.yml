@@ -1,0 +1,22 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${ISSUER_URL}
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: user-management-service
+          uri: lb://USER-MANAGEMENT-SERVICE
+          predicates:
+            - Path=/api/v1/users/**
+        - id: calendars-service
+          uri: lb://CALENDARS-SERVICE
+          predicates:
+            - Path=/api/v1/calendars/**, /api/v1/events/**, /api/v1/attachments/**, /api/v1/conference/**, /api/v1/auth/**, /api/v1/event/location/**, /api/v1/tasks/**
+
+server:
+  port: 8083

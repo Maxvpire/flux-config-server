@@ -1,12 +1,12 @@
 server:
-  port: 8888
+  port: ${PORT:8888}
 spring:
   profiles:
     active: native
   security:
     user:
-      name: ${CONFIG_USER}
-      password: ${CONFIG_PASSWORD}
+      name: maxvpire
+      password: h(wuP}}&R8Jk1RT/0$5KBT$yw00
   application:
     name: FluxConfigService
   cloud:
