@@ -26,6 +26,12 @@ spring:
     redis:
       host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          time-between-eviction-runs: 30s
 
 server:
   port: ${PORT:8081}
